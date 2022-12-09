@@ -19,7 +19,7 @@ public class SelectionFrame extends JFrame {
 	 public SelectionFrame(){
 
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        setTitle("Simulating Sorting Algorithm");
+	        setTitle("Selection Sort Algorithm");
 	        this.setLocation(500,250);
 	        
 	        toolsPanel();
