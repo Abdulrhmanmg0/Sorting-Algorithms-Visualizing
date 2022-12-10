@@ -101,7 +101,8 @@ public class MenuFrame extends JFrame{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			
+			new InsertionFrame();
+			dispose();
 		}
 	 }
 	 
@@ -110,7 +111,8 @@ public class MenuFrame extends JFrame{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			
+			new BubbleFrame();
+			dispose();
 		}
 	 }
 	 
