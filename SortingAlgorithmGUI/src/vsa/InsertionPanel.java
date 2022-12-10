@@ -21,8 +21,8 @@ public class InsertionPanel extends JPanel{
     int elementsSize = 20;
     int Corrected = 0;
     int Pacing = 26;
-    int pace = 0 ;
-    int min = 0;
+
+    int pace = 1;
     
     boolean flag = true;
     
@@ -53,16 +53,35 @@ public class InsertionPanel extends JPanel{
 			rand(i);
 		}
 		repaint();
-		min = 0 ;
-		pace = 0 ;
+		pace = 1 ;
 		Corrected = 0;
 	}
 	
-	
+	public void Shiffter(int first , int last) {
+		
+		int swap = elements[first];
+		elements[first] = elements[last];
+		elements[last] = swap;
+		
+		if(last > 0) {
+			if(elements[last]<elements[last-1]) {
+				Shiffter(last,last-1);
+			}
+		}
+	}
 	
 	public void InsertionSort() {
 	
-		
+		if(elements[pace]<elements[pace-1]) {
+			
+			Shiffter(pace,pace-1);
+			
+		}
+		repaint();
+		Corrected++;
+		if(pace < 19) {
+			pace++;
+		}
 		
 	}
 	
@@ -81,6 +100,7 @@ public class InsertionPanel extends JPanel{
 	         		g2.setColor(Color.RED);
 	        		flag = true;
 	        	}
+	        	
 	        	if(C > 0 ) { 
 	        		g2.setColor(Color.GREEN);
 	        		C--;

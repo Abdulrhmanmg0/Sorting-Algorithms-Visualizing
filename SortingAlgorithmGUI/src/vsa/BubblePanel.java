@@ -55,7 +55,7 @@ public class BubblePanel extends JPanel{
 	
 	
 	
-	public void InsertionSort() {
+	public void BubbleSort() {
 	
 		
 		

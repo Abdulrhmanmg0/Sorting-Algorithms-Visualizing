@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,7 +22,7 @@ public class BubbleFrame extends JFrame{
 	 public BubbleFrame(){
 
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        setTitle("Selection Sort Algorithm");
+	        setTitle("Bubble Sort Algorithm");
 	        this.setLocation(500,250);
 	        
 	        toolsPanel();
@@ -53,7 +54,7 @@ public class BubbleFrame extends JFrame{
 	        Sort.setFocusable(false);
 	        Sort.setFont(new Font("Arial",Font.BOLD,20));
 	        
-	        Sort.addActionListener(new Selection());
+	        Sort.addActionListener(new Bubble());
 	        
 	        JButton Rand = new JButton("Randomize");
 	        
@@ -80,12 +81,12 @@ public class BubbleFrame extends JFrame{
 	    }
 	 
 
-		public class Selection implements ActionListener{
+		public class Bubble implements ActionListener{
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				BP.InsertionSort();
+				BP.BubbleSort();
 				
 			}
 		}

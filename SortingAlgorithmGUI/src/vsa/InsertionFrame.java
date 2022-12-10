@@ -20,7 +20,7 @@ public class InsertionFrame extends JFrame{
 	 public InsertionFrame(){
 
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        setTitle("Selection Sort Algorithm");
+	        setTitle("Insertion Sort Algorithm");
 	        this.setLocation(500,250);
 	        
 	        toolsPanel();
