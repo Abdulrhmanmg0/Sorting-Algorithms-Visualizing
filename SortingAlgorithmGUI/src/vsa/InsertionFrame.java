@@ -21,7 +21,8 @@ public class InsertionFrame extends JFrame{
 
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        setTitle("Insertion Sort Algorithm");
-	        this.setLocation(500,250);
+	        setLocation(500,250);
+	        setResizable(false);
 	        
 	        toolsPanel();
 	        
@@ -42,7 +43,7 @@ public class InsertionFrame extends JFrame{
 		 	IT.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 	        IT.setDoubleBuffered(true);
 	        IT.setFocusable(true);
-	        IT.setLayout(new FlowLayout(FlowLayout.LEFT));
+	        IT.setLayout(new FlowLayout(FlowLayout.CENTER));
 
 	        
 	        JButton Sort = new JButton("Sort");
@@ -54,6 +55,8 @@ public class InsertionFrame extends JFrame{
 	        
 	        Sort.addActionListener(new Selection());
 	        
+	        Sort.setPreferredSize(new Dimension(138, 34));
+	        
 	        JButton Rand = new JButton("Randomize");
 	        
 	        Rand.setBorderPainted(false);
@@ -63,6 +66,7 @@ public class InsertionFrame extends JFrame{
 	        
 	        Rand.addActionListener(new RAND());
 	        
+	        
 	        JButton Back = new JButton("Back");
 	        
 	        Back.setBorderPainted(false);
@@ -71,6 +75,8 @@ public class InsertionFrame extends JFrame{
 	        Back.setFont(new Font("Arial",Font.BOLD,20));
 	        
 	        Back.addActionListener(new BACK());
+	        
+	        Back.setPreferredSize(new Dimension(138, 34));
 	        
 	        IT.add(Rand);
 	        IT.add(Sort);

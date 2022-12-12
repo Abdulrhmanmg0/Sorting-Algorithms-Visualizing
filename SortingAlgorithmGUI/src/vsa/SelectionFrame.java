@@ -20,7 +20,8 @@ public class SelectionFrame extends JFrame {
 
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        setTitle("Selection Sort Algorithm");
-	        this.setLocation(500,250);
+	        setLocation(500,250);
+	        setResizable(false);
 	        
 	        toolsPanel();
 	        
@@ -41,7 +42,7 @@ public class SelectionFrame extends JFrame {
 		 	ST.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 	        ST.setDoubleBuffered(true);
 	        ST.setFocusable(true);
-	        ST.setLayout(new FlowLayout(FlowLayout.LEFT));
+	        ST.setLayout(new FlowLayout(FlowLayout.CENTER));
 
 	        
 	        JButton Sort = new JButton("Sort");
@@ -52,6 +53,9 @@ public class SelectionFrame extends JFrame {
 	        Sort.setFont(new Font("Arial",Font.BOLD,20));
 	        
 	        Sort.addActionListener(new Selection());
+
+	        Sort.setPreferredSize(new Dimension(138, 34));
+	        
 	        
 	        JButton Rand = new JButton("Randomize");
 	        
@@ -70,7 +74,9 @@ public class SelectionFrame extends JFrame {
 	        Back.setFont(new Font("Arial",Font.BOLD,20));
 	        
 	        Back.addActionListener(new BACK());
-	        
+	           
+	        Back.setPreferredSize(new Dimension(138, 34));
+	     
 	        ST.add(Rand);
 	        ST.add(Sort);
 	        ST.add(Back);

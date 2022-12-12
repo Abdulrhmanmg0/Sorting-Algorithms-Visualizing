@@ -23,7 +23,8 @@ public class BubbleFrame extends JFrame{
 
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        setTitle("Bubble Sort Algorithm");
-	        this.setLocation(500,250);
+	        setLocation(500,250);
+	        setResizable(false);
 	        
 	        toolsPanel();
 	        
@@ -44,7 +45,7 @@ public class BubbleFrame extends JFrame{
 		 	BT.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 	        BT.setDoubleBuffered(true);
 	        BT.setFocusable(true);
-	        BT.setLayout(new FlowLayout(FlowLayout.LEFT));
+	        BT.setLayout(new FlowLayout(FlowLayout.CENTER));
 
 	        
 	        JButton Sort = new JButton("Sort");
@@ -55,6 +56,8 @@ public class BubbleFrame extends JFrame{
 	        Sort.setFont(new Font("Arial",Font.BOLD,20));
 	        
 	        Sort.addActionListener(new Bubble());
+	        
+	        Sort.setPreferredSize(new Dimension(138, 34));
 	        
 	        JButton Rand = new JButton("Randomize");
 	        
@@ -74,6 +77,8 @@ public class BubbleFrame extends JFrame{
 	        
 	        Back.addActionListener(new BACK());
 	        
+	        Back.setPreferredSize(new Dimension(138, 34));
+	     
 	        BT.add(Rand);
 	        BT.add(Sort);
 	        BT.add(Back);

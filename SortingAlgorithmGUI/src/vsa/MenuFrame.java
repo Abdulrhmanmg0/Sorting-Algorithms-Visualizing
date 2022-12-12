@@ -18,7 +18,8 @@ public class MenuFrame extends JFrame{
 	        setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        setTitle("V.S.A.");
-	        this.setLocation(500,250);
+	        setLocation(500,250);
+	        setResizable(false);
 	        
 	        JPanel p = new JPanel(new BorderLayout());
 	        p.setBackground(Color.BLACK);

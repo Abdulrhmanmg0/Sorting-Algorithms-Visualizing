@@ -12,16 +12,19 @@ import javax.swing.JPanel;
 public class InsertionPanel extends JPanel{
 
 	Random rand = new Random();
-
+	
+	int pointing = 1;
+    int Corrected = 0;
+    
     int WIDTH= 525;
     int HEIGHT = 300;
     
     int [] elements = new int [20];
     int [] posibilties = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24};
     int elementsSize = 20;
-    int Corrected = 0;
-    int Pacing = 26;
 
+    int Pacing = 26;
+    
     int pace = 1;
     
     boolean flag = true;
@@ -55,6 +58,7 @@ public class InsertionPanel extends JPanel{
 		repaint();
 		pace = 1 ;
 		Corrected = 0;
+		pointing = 1;
 	}
 	
 	public void Shiffter(int first , int last) {
@@ -79,6 +83,7 @@ public class InsertionPanel extends JPanel{
 		}
 		repaint();
 		Corrected++;
+		pointing++;
 		if(pace < 19) {
 			pace++;
 		}
@@ -90,6 +95,7 @@ public class InsertionPanel extends JPanel{
 	        super.paintComponent(g);
 	        Graphics2D g2 =(Graphics2D)g;
 	        int C = Corrected;
+	        int P = pointing;
 	        
 	        for(int i = 0 ; i < elements.length; i++) {
 	        	
@@ -99,6 +105,11 @@ public class InsertionPanel extends JPanel{
 	        	}else {
 	         		g2.setColor(Color.RED);
 	        		flag = true;
+	        	}
+	        	
+	        	if(P > 0 ) { 
+	        		g2.setColor(Color.BLUE);
+	        		P--;
 	        	}
 	        	
 	        	if(C > 0 ) { 

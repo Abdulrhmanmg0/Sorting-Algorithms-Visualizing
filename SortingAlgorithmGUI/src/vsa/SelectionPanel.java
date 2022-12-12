@@ -8,6 +8,8 @@ public class SelectionPanel  extends JPanel {
 
 
 	Random rand = new Random();
+	
+	int pointing = 1;
 
     int WIDTH= 525;
     int HEIGHT = 300;
@@ -52,6 +54,7 @@ public class SelectionPanel  extends JPanel {
 		min = 0 ;
 		pace = 0 ;
 		Corrected = 0;
+		pointing = 1;
 	}
 	
 	
@@ -78,6 +81,7 @@ public class SelectionPanel  extends JPanel {
 		}
 		repaint();
 		Corrected++;
+		pointing++;
 		if(pace < 19) {
 			pace++;
 			min = pace;
@@ -89,6 +93,8 @@ public class SelectionPanel  extends JPanel {
 	        super.paintComponent(g);
 	        Graphics2D g2 =(Graphics2D)g;
 	        int C = Corrected;
+	        int P = pointing;
+	        
 	        for(int i = 0 ; i < elements.length; i++) {
 	        	
 	        	if(flag == true) {
@@ -98,6 +104,12 @@ public class SelectionPanel  extends JPanel {
 	         		g2.setColor(Color.RED);
 	        		flag = true;
 	        	}
+	        	
+	        	if(P > 0 ) { 
+	        		g2.setColor(Color.BLUE);
+	        		P--;
+	        	}
+	        	
 	        	if(C > 0 ) { 
 	        		g2.setColor(Color.GREEN);
 	        		C--;
