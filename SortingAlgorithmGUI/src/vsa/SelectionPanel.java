@@ -10,7 +10,7 @@ public class SelectionPanel  extends JPanel {
 	Random rand = new Random();
 	
 	int pointing = 1;
-
+	
     int WIDTH= 525;
     int HEIGHT = 300;
     
@@ -98,10 +98,10 @@ public class SelectionPanel  extends JPanel {
 	        for(int i = 0 ; i < elements.length; i++) {
 	        	
 	        	if(flag == true) {
-	        		g2.setColor(Color.PINK);
+	        		g2.setColor(Color.decode("#59bfff"));
 	        		flag = false;
 	        	}else {
-	         		g2.setColor(Color.RED);
+	         		g2.setColor(Color.decode("#26abff"));
 	        		flag = true;
 	        	}
 	        	

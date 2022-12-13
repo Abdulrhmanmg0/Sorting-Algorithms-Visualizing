@@ -15,7 +15,8 @@ public class InsertionPanel extends JPanel{
 	
 	int pointing = 1;
     int Corrected = 0;
-    
+	int movedIndex = -1;
+	
     int WIDTH= 525;
     int HEIGHT = 300;
     
@@ -59,26 +60,29 @@ public class InsertionPanel extends JPanel{
 		pace = 1 ;
 		Corrected = 0;
 		pointing = 1;
+		movedIndex = -1;
 	}
 	
-	public void Shiffter(int first , int last) {
+	public int Shiffter(int first , int last) {
+		
 		
 		int swap = elements[first];
 		elements[first] = elements[last];
 		elements[last] = swap;
-		
+		int index = last;
 		if(last > 0) {
 			if(elements[last]<elements[last-1]) {
-				Shiffter(last,last-1);
+				return Shiffter(last,last-1);
 			}
 		}
+		return index;
 	}
 	
 	public void InsertionSort() {
 	
 		if(elements[pace]<elements[pace-1]) {
 			
-			Shiffter(pace,pace-1);
+			movedIndex = Shiffter(pace,pace-1);
 			
 		}
 		repaint();
@@ -100,10 +104,10 @@ public class InsertionPanel extends JPanel{
 	        for(int i = 0 ; i < elements.length; i++) {
 	        	
 	        	if(flag == true) {
-	        		g2.setColor(Color.PINK);
+	        		g2.setColor(Color.decode("#59bfff"));
 	        		flag = false;
 	        	}else {
-	         		g2.setColor(Color.RED);
+	         		g2.setColor(Color.decode("#26abff"));
 	        		flag = true;
 	        	}
 	        	
@@ -112,10 +116,16 @@ public class InsertionPanel extends JPanel{
 	        		P--;
 	        	}
 	        	
-	        	if(C > 0 ) { 
+	        	if(i == movedIndex){
+	        		
+	        		g2.setColor(Color.RED);
+	        		movedIndex = -1;
+	        		C--;
+	        	}else if(C > 0 ) { 
 	        		g2.setColor(Color.GREEN);
 	        		C--;
 	        	}
+	        	
 	        	
 	        	g2.fillRect(  Pacing * i + 5 , HEIGHT - elements[i]*10-13 , elementsSize, elements[i]*10);
 	        	g2.setColor(Color.BLUE);

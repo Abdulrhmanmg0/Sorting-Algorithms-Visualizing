@@ -84,10 +84,10 @@ public class BubblePanel extends JPanel{
 	        for(int i = elements.length-1 ; i >= 0; i--) {
 	        	
 	        	if(flag == true) {
-	        		g2.setColor(Color.PINK);
+	        		g2.setColor(Color.decode("#59bfff"));
 	        		flag = false;
 	        	}else {
-	         		g2.setColor(Color.RED);
+	         		g2.setColor(Color.decode("#26abff"));
 	        		flag = true;
 	        	}
 	        	
