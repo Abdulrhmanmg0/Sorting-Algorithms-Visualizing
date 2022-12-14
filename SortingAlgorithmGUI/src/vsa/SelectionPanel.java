@@ -116,7 +116,7 @@ public class SelectionPanel  extends JPanel {
 	        	}
 	        	
 	        	g2.fillRect(  Pacing * i + 5 , HEIGHT - elements[i]*10-13 , elementsSize, elements[i]*10);
-	        	g2.setColor(Color.BLUE);
+	        	g2.setColor(Color.WHITE);
 	        	g2.setFont(new Font("Arial",Font.BOLD,10));
 	        	g2.drawString(""+elements[i]*10, Pacing * i + 5, HEIGHT-3);
 	        	

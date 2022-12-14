@@ -98,24 +98,24 @@ public class InsertionPanel extends JPanel{
 	        
 	        super.paintComponent(g);
 	        Graphics2D g2 =(Graphics2D)g;
-	        int C = Corrected;
-	        int P = pointing;
-	        
-	        for(int i = 0 ; i < elements.length; i++) {
-	        	
-	        	if(flag == true) {
-	        		g2.setColor(Color.decode("#59bfff"));
-	        		flag = false;
-	        	}else {
-	         		g2.setColor(Color.decode("#26abff"));
-	        		flag = true;
-	        	}
-	        	
-	        	if(P > 0 ) { 
-	        		g2.setColor(Color.BLUE);
-	        		P--;
-	        	}
-	        	
+	        int C = Corrected;                                                                                                                  
+	        int P = pointing;                                                                                                                   
+	                                                                                                                                            
+	        for(int i = 0 ; i < elements.length; i++) {                                                                                         
+	        	                                                                                                                                
+	        	if(flag == true) {                                                                                                              
+	        		g2.setColor(Color.decode("#59bfff"));                                                                                       
+	        		flag = false;                                                                                                               
+	        	}else {                                                                                                                         
+	         		g2.setColor(Color.decode("#26abff"));                                                                                       
+	        		flag = true;                                                                                                                
+	        	}                                                                                                                               
+	        	                                                                                                                                
+	        	if(P > 0 ) {                                                                                                                    
+	        		g2.setColor(Color.BLUE);                                                                                                    
+	        		P--;                                                                                                                        
+	        	}                                                                                                                               
+	        	                                                                                                                                
 	        	if(i == movedIndex){
 	        		
 	        		g2.setColor(Color.RED);
@@ -128,7 +128,7 @@ public class InsertionPanel extends JPanel{
 	        	
 	        	
 	        	g2.fillRect(  Pacing * i + 5 , HEIGHT - elements[i]*10-13 , elementsSize, elements[i]*10);
-	        	g2.setColor(Color.BLUE);
+	        	g2.setColor(Color.WHITE);
 	        	g2.setFont(new Font("Arial",Font.BOLD,10));
 	        	g2.drawString(""+elements[i]*10, Pacing * i + 5, HEIGHT-3);
 	        	
